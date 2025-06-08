@@ -1,0 +1,42 @@
+#root {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.general {
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.section-title {
+    margin-bottom: 2rem;
+}
+
+label {
+    margin-bottom: 0.5rem;
+}
+
+input {
+    display: block;
+    width: 100%;
+    padding: 0.3rem 0.7rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+
+.form-item {
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
+.form-group {
+    display: flex;
+    width: 100%;
+    gap: 1.5rem;
+}
