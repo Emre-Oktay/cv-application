@@ -4,7 +4,7 @@
     padding: 2rem;
 }
 
-.general {
+section {
     max-width: 700px;
     margin: 0 auto;
     display: flex;
@@ -19,7 +19,8 @@ label {
     margin-bottom: 0.5rem;
 }
 
-input {
+input,
+textarea {
     display: block;
     width: 100%;
     padding: 0.3rem 0.7rem;
