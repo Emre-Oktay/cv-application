@@ -41,3 +41,32 @@ textarea {
     width: 100%;
     gap: 1.5rem;
 }
+
+.cv-page {
+    width: 794px;
+    height: 1123px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 1rem auto;
+    padding: 2.5rem;
+}
+
+.cv-header {
+    text-align: center;
+    border-bottom: 2px solid #333;
+    padding-bottom: 1.25rem;
+    margin-bottom: 1.8rem;
+}
+
+.cv-section {
+    margin-bottom: 1.5rem;
+}
+
+.cv-section h2 {
+    border-bottom: 1px solid #303030;
+    margin-bottom: 1rem;
+}
+
+.cv-group {
+    display: flex;
+    justify-content: space-between;
+}
