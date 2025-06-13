@@ -1,63 +1,92 @@
-export default function Practical({ initial, handler }) {
+export default function Practical({ items, handler, onAdd, onRemove }) {
     return (
         <section className="practical">
-            <h2 className="section-title">Practical Information</h2>
-
-            <div className="form-item">
-                <label htmlFor="company">Company Name:</label>
-                <input type="text" id="company" name="company" value={initial['company']} onChange={handler} />
+            <div className="section-title">
+                <h2>Work experience</h2>
+                <button type="button" className="add-button" onClick={onAdd}>
+                    Add Experience
+                </button>
             </div>
+            {items.map((item, index) => (
+                <div key={item.id}>
+                    <div className="item-header">
+                        <h3>Experience {index + 1}</h3>
+                        {items.length > 1 && (
+                            <button type="button" className="remove-button" onClick={() => onRemove(item.id)}>
+                                Remove
+                            </button>
+                        )}
+                    </div>
 
-            <div className="form-item">
-                <label htmlFor="position">Position Title:</label>
-                <input type="text" id="position" name="position" value={initial['position']} onChange={handler} />
-            </div>
+                    <div className="form-item">
+                        <label htmlFor={`company-${index}`}>Company Name:</label>
+                        <input
+                            type="text"
+                            id={`company-${index}`}
+                            name="company"
+                            value={item['company']}
+                            onChange={(e) => handler(item.id, e)}
+                        />
+                    </div>
 
-            <div className="form-group">
-                <div className="form-item">
-                    <label htmlFor="position-start-date">Start Date:</label>
-                    <input
-                        type="date"
-                        id="position-start-date"
-                        name="start-date"
-                        value={initial['start-date']}
-                        onChange={handler}
-                    />
+                    <div className="form-item">
+                        <label htmlFor={`position-${index}`}>Position Title:</label>
+                        <input
+                            type="text"
+                            id={`position-${index}`}
+                            name="position"
+                            value={item['position']}
+                            onChange={(e) => handler(item.id, e)}
+                        />
+                    </div>
+
+                    <div className="form-group">
+                        <div className="form-item">
+                            <label htmlFor={`position-start-date-${index}`}>Start Date:</label>
+                            <input
+                                type="date"
+                                id={`position-start-date-${index}`}
+                                name="start-date"
+                                value={item['start-date']}
+                                onChange={(e) => handler(item.id, e)}
+                            />
+                        </div>
+
+                        <div className="form-item">
+                            <label htmlFor={`position-end-date-${index}`}>End Date:</label>
+                            <input
+                                type="date"
+                                id={`position-end-date-${index}`}
+                                name="end-date"
+                                value={item['end-date']}
+                                onChange={(e) => handler(item.id, e)}
+                            />
+                        </div>
+                    </div>
+
+                    <div className="form-item">
+                        <label htmlFor={`company-location-${index}`}>Location:</label>
+                        <input
+                            type="text"
+                            id={`company-location-${index}`}
+                            name="location"
+                            value={item['location']}
+                            onChange={(e) => handler(item.id, e)}
+                        />
+                    </div>
+
+                    <div className="form-item">
+                        <label htmlFor={`description-${index}`}>Description:</label>
+                        <textarea
+                            id={`description-${index}`}
+                            name="description"
+                            rows={2}
+                            value={item['description']}
+                            onChange={(e) => handler(item.id, e)}
+                        />
+                    </div>
                 </div>
-
-                <div className="form-item">
-                    <label htmlFor="position-end-date">End Date:</label>
-                    <input
-                        type="date"
-                        id="position-end-date"
-                        name="end-date"
-                        value={initial['end-date']}
-                        onChange={handler}
-                    />
-                </div>
-            </div>
-
-            <div className="form-item">
-                <label htmlFor="company-location">Location:</label>
-                <input
-                    type="text"
-                    id="company-location"
-                    name="location"
-                    value={initial['location']}
-                    onChange={handler}
-                />
-            </div>
-
-            <div className="form-item">
-                <label htmlFor="description">Description:</label>
-                <textarea
-                    id="description"
-                    name="description"
-                    rows={2}
-                    value={initial['description']}
-                    onChange={handler}
-                />
-            </div>
+            ))}
         </section>
     );
 }

@@ -13,6 +13,8 @@ section {
 
 .section-title {
     margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
 }
 
 label {
@@ -29,6 +31,11 @@ textarea {
     line-height: 1.5;
     border: 1px solid #000;
     border-radius: 5px;
+}
+
+.item-header {
+    display: flex;
+    justify-content: space-between;
 }
 
 .form-item {
@@ -63,6 +70,10 @@ textarea {
 
 .cv-section h2 {
     border-bottom: 1px solid #303030;
+    margin-bottom: 1rem;
+}
+
+.cv-item {
     margin-bottom: 1rem;
 }
 
