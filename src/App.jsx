@@ -7,7 +7,7 @@ import CvPage from './components/CvPage.jsx';
 import './styles/App.css';
 
 function App() {
-    const [state, setState] = useState(0);
+    const [state, setState] = useState('edit');
     const [general, setGeneral] = useState({
         'first-name': 'John',
         'last-name': 'Smith',
@@ -90,27 +90,59 @@ function App() {
         setPractical(practical.filter((item) => item.id !== id));
     }
 
+    function resetForm() {
+        setGeneral({
+            'first-name': '',
+            'last-name': '',
+            email: '',
+            phone: '',
+        });
+        setEducational([
+            {
+                id: crypto.randomUUID(),
+                school: '',
+                'study-title': '',
+                'start-date': '',
+                'end-date': '',
+                location: '',
+            },
+        ]);
+        setPractical([
+            {
+                id: crypto.randomUUID(),
+                company: '',
+                position: '',
+                'start-date': '',
+                'end-date': '',
+                location: '',
+                description: '',
+            },
+        ]);
+    }
+
     return (
         <>
-            <form>
-                <General state={state} initial={general} handler={generalHandler} />
-                <Educational
-                    state={state}
-                    items={educational}
-                    handler={educationalHandler}
-                    onAdd={addEducationalItem}
-                    onRemove={removeEducationalItem}
-                />
-                <Practical
-                    state={state}
-                    items={practical}
-                    handler={practicalHandler}
-                    onAdd={addPracticalItem}
-                    onRemove={removePracticalItem}
-                />
-                <ButtonSection state={state} stateSetter={setState} />
-            </form>
-            <CvPage general={general} educational={educational} practical={practical} />
+            {state == 'edit' && (
+                <form>
+                    <General state={state} initial={general} handler={generalHandler} />
+                    <Educational
+                        state={state}
+                        items={educational}
+                        handler={educationalHandler}
+                        onAdd={addEducationalItem}
+                        onRemove={removeEducationalItem}
+                    />
+                    <Practical
+                        state={state}
+                        items={practical}
+                        handler={practicalHandler}
+                        onAdd={addPracticalItem}
+                        onRemove={removePracticalItem}
+                    />
+                </form>
+            )}
+            {state == 'submit' && <CvPage general={general} educational={educational} practical={practical} />}
+            <ButtonSection state={state} stateSetter={setState} resetter={resetForm} />
         </>
     );
 }

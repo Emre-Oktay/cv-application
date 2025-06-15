@@ -81,3 +81,14 @@ textarea {
     display: flex;
     justify-content: space-between;
 }
+
+.button-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.button-section button {
+    width: 20%;
+    margin: 0 1rem;
+}
