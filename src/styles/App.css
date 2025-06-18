@@ -31,6 +31,8 @@ textarea {
     line-height: 1.5;
     border: 1px solid #000;
     border-radius: 5px;
+    background-color: #686868;
+    color: #e7e7e7;
 }
 
 .item-header {
@@ -49,12 +51,28 @@ textarea {
     gap: 1.5rem;
 }
 
+.add-button {
+    background-color: #242424;
+    color: #e7e7e7;
+    border-radius: 5px;
+    border: 1px solid #e7e7e7;
+    transition: 200ms ease-in-out;
+    cursor: pointer;
+}
+
+.add-button:hover {
+    background-color: #2c2c2c;
+    color: #e7e7e7;
+}
+
 .cv-page {
     width: 794px;
     height: 1123px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin: 1rem auto;
     padding: 2.5rem;
+    background-color: #fff;
+    color: #000;
 }
 
 .cv-header {
@@ -91,4 +109,22 @@ textarea {
 .button-section button {
     width: 20%;
     margin: 0 1rem;
+    background-color: #242424;
+    color: #e7e7e7;
+    border-radius: 5px;
+    border: 1px solid #e7e7e7;
+    cursor: pointer;
+}
+
+.button-section button:hover {
+    background-color: #2c2c2c;
+    color: #e7e7e7;
+}
+
+.button-section button:disabled {
+    background-color: #555;
+    color: #999;
+    border: 1px solid #777;
+    cursor: default;
+    opacity: 0.6;
 }
