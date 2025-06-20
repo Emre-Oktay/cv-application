@@ -6,6 +6,10 @@ A React-based CV/resume builder application built as part of The Odin Project cu
 
 This application allows users to input their personal information and generate a professional CV/résumé. It's designed to practice fundamental React concepts including state management, props, and component architecture.
 
+## Live Demo
+
+You can check out the live demo of the project here: [Live Demo](https://eloquent-frangollo-a7e89c.netlify.app/)
+
 ## Screenshots
 
 ![CV App Screenshot 1](./screenshots/screenshot-1.png)
